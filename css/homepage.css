@@ -57,3 +57,11 @@ nav {
 .nav-list a:hover{
     color: var(--main-neutral-01);
 }
+
+footer{ /*hurrary*/
+    text-align: center;
+    padding: 1em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
