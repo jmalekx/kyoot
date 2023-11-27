@@ -17,7 +17,7 @@ else{
 
 session_start(); #starts new session when logging in
 
-if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and psw have been submitted using the http POST method
+if(isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['remember'])){ #checks if username and psw have been submitted using the http POST method
     function valid($input){ #removal of spaces, slashes and html characters from string so can be used in SQL
         $input = stripslashes($input);
         $input = trim($input);
@@ -28,6 +28,9 @@ if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and
     #retrieve and validate username and password inputs
     $uname = valid($_POST['uname']);
 	$psw = valid($_POST['password']);
+
+    #set cookie with username
+    setcookie('remember_me', $uname, time() + (30 * 24 * 60 * 60)); #cookie expires in 30 days
 
     #checks if empty for potential error message display
 	if (empty($uname)){
@@ -63,6 +66,14 @@ if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and
 	        exit();
 		}
 	}
+    elseif (isset($_COOKIE['remember_me'])){
+        #if cookie set prefill uname field
+        $uname = $_COOKIE['remember_me'];
+    }
+    else {
+        #cookie not set and checkbock not checked clear cookie
+        setcookie('remember_me', '', time() - 3600);
+    }
 }
 else{
 	header("Location: index.php"); #redirects back to index when values not set

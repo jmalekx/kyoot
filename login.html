@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/signup.css" />
 
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,9 +44,9 @@
 
     <main>
       <div class="container">
-        <form action="login.php" method="POST">
+        <form action="login.php" method="POST" class="loginform">
             <fieldset>
-              <svg width="640" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+              <svg width="540" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
                 <g class="layer">
                  <title>Layer 1</title>
@@ -101,16 +101,17 @@
                     </div>
 
                     <div class="remember-forgot">
-                      <label><input type="checkbox">Remember me</label>
+                      <label><input type="checkbox" name="remember"> Remember me</label>
                     </div>
-
-                    <button type="submit">Login</button>
 
                     <div class="signup-link">
                       <p>Don't have an account?
                         <a href="signup.html">Register</a>
                       </p>
                     </div>
+
+                    <button type="submit">Login</button>
+                    <div class="error-message"></div>
             </fieldset>
         </form>
       </div>

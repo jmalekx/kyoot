@@ -131,6 +131,8 @@ main {
 footer{ /*hurrary*/
     text-align: center;
     padding: var(--size-700);
+    color: var(--main-neutral-00);
+    font-weight: 700;
     left: 0;
     bottom: 0;
     width: 100%;
