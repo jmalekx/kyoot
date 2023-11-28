@@ -191,3 +191,8 @@ form{
 .signup-link{
     padding-top:1em;
 }
+.error{
+    font-size: 1.05em;
+    color:white;
+    font-weight: 700;
+}

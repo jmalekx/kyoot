@@ -17,7 +17,7 @@ else{
 
 session_start(); #starts new session when logging in
 
-if(isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['remember'])){ #checks if username and psw have been submitted using the http POST method
+if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and psw have been submitted using the http POST method
     function valid($input){ #removal of spaces, slashes and html characters from string so can be used in SQL
         $input = stripslashes($input);
         $input = trim($input);
@@ -29,16 +29,13 @@ if(isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['remember
     $uname = valid($_POST['uname']);
 	$psw = valid($_POST['password']);
 
-    #set cookie with username
-    setcookie('remember_me', $uname, time() + (30 * 24 * 60 * 60)); #cookie expires in 30 days
-
     #checks if empty for potential error message display
 	if (empty($uname)){
-        header("Location: index.php?error=Username is required");
+        header("Location: loginindex.php?error=Username is required");
         exit();
 	}
     else if(empty($psw)){
-        header("Location: index.php?error=Password is required");
+        header("Location: loginindex.php?error=Password is required");
 	    exit();
 	}
     #runs when both username and password values are present
@@ -57,25 +54,17 @@ if(isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['remember
 		        exit();
             }
             else{
-				header("Location: index.php?error=Incorrect username and/or password");
+				header("Location: loginindex.php?error=Incorrect username and/or password");
 		        exit();
 			}
 		}
         else{
-			header("Location: index.php?error=Incorrect username and/or password");
+			header("Location: loginindex.php?error=Incorrect username and/or password");
 	        exit();
 		}
 	}
-    elseif (isset($_COOKIE['remember_me'])){
-        #if cookie set prefill uname field
-        $uname = $_COOKIE['remember_me'];
-    }
-    else {
-        #cookie not set and checkbock not checked clear cookie
-        setcookie('remember_me', '', time() - 3600);
-    }
 }
 else{
-	header("Location: index.php"); #redirects back to index when values not set
+	header("Location: loginindex.php"); #redirects back to index when values not set
 	exit();
 }
