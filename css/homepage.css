@@ -40,10 +40,12 @@ html {
     scroll-behavior: smooth;
 
     font-family: 'Comfortaa', sans-serif;
+
 }
 
 body {
     min-height: 100vh;
+    
 }
 
 main {
@@ -72,6 +74,7 @@ main {
 
     align-items: center;
     justify-content: center;
+    /* text-align: center; */
 
 
 }
@@ -156,3 +159,6 @@ footer{ /*hurrary*/
 .fs-600 {font-size: var(--fs-600);}
 .fs-700 { font-size: var(--fs-700);}
 .fs-800 { font-size: var(--fs-800);}
+
+
+
