@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/signup.css" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/signup.css" />
 
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +26,7 @@
       <div class="nav-wrapper">
         <div class="logo">
           <img
-            src="images/kyootLogo.png"
+            src="../images/kyootLogo.png"
             alt="logo"
             style="width: 100px; height: auto"
           />
@@ -34,9 +34,9 @@
 
         <nav class="primary-navigation">
           <ul class="nav-list fw-bold fs-500">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="signup.html">Sign up</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="../homepage.html">Home</a></li>
+            <li><a href="../signup.html">Sign up</a></li>
+            <li><a href="loginindex.php">Login</a></li>
           </ul>
         </nav>
       </div>

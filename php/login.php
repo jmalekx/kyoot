@@ -31,11 +31,11 @@ if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and
 
     #checks if empty for potential error message display
 	if (empty($uname)){
-        header("Location: index.php?error=Username is required");
+        header("Location: loginindex.php?error=Username is required");
         exit();
 	}
     else if(empty($psw)){
-        header("Location: index.php?error=Password is required");
+        header("Location: loginindex.php?error=Password is required");
 	    exit();
 	}
     #runs when both username and password values are present
@@ -54,17 +54,17 @@ if(isset($_POST['uname']) && isset($_POST['password'])){ #checks if username and
 		        exit();
             }
             else{
-				header("Location: index.php?error=Incorrect username and/or password");
+				header("Location: loginindex.php?error=Incorrect username and/or password");
 		        exit();
 			}
 		}
         else{
-			header("Location: index.php?error=Incorrect username and/or password");
+			header("Location: loginindex.php?error=Incorrect username and/or password");
 	        exit();
 		}
 	}
 }
 else{
-	header("Location: index.php"); #redirects back to index when values not set
+	header("Location: loginindex.php"); #redirects back to index when values not set
 	exit();
 }
