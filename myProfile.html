@@ -41,6 +41,8 @@
       </div>
     </div>
 
+    <!-- change css settings -->
+
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Settings</button>
       <div id="myDropdown" class="dropdown-content">
@@ -51,6 +53,27 @@
         </li>
       </div>
     </div>
+
+    <main>
+      <div class="container">
+        <div class="even-columns">
+          <div>
+            <h1 class="homepageHeading fw-bold fs-800">My Projects</h1>
+          </div>
+          <div>
+            <h2>GALLERY</h2>
+          </div>
+          <div>
+            <label for="image_input">+ Add Project</label>
+            <input type="file" name=""  style="visibility:hidden;" id="image_input" accept="image/png, image/jpg">
+            <a href="#inside project"><div id="display_image"></div></a>
+
+          </div>
+          
+        </div>
+      </div>
+      
+    </main>
 
 
     <script>
@@ -74,13 +97,28 @@
         }
       };
 
-      //change css settings
+      // image js
+      const image_input = document.querySelector("#image_input")
+      var uploaded_image = "";
+
+      image_input.addEventListener("change", function(){
+        //console.log(image_input.value);
+        
+        //to read what file user selected:
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+          uploaded_image = reader.result; //once impage is uploaded we store it in this variable and we are gna read file using reader object
+          document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+
+        });
+        reader.readAsDataURL(this.files[0]);
+      })
+
+      
 
       
     </script>
-    <main>
-      
-    </main>
+    
   </body>
 
   <footer>Kyoot 2023 &copy;</footer>
