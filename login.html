@@ -46,7 +46,7 @@
 
     <main>
       <div class="container">
-        <form action="login.php" method="POST" class="loginform">
+        <form action="myProfile.html" method="GET" class="loginform">
           <fieldset>
             <svg
               width="540"
@@ -183,10 +183,7 @@
               </p>
             </div>
 
-            <!-- just for now implementation -->
-            <a href="myProfile.html">Button</a>
-
-            <button type="submit">Login</button>
+            <button type="submit" onclick="submitForm()">Login</button>
 
             <!-- block checks if error paramter is set in URL query string 
                          so that when there is an error it will displayed by a p-->
@@ -197,6 +194,25 @@
                      ?>  -->
           </fieldset>
         </form>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Retrieve the checkbox and the stored value from localStorage
+              var rememberCheckbox = document.querySelector('input[name="remember"]');
+              var storedValue = localStorage.getItem('rememberMe');
+  
+              // Set the checkbox state based on the stored value
+              if (storedValue === 'true') {
+                  rememberCheckbox.checked = true;
+              }
+  
+              // Add an event listener to the checkbox to store its state in localStorage
+              rememberCheckbox.addEventListener("change", function () {
+                  localStorage.setItem('rememberMe', this.checked);
+              });
+          });
+      </script>
+
       </div>
     </main>
   </body>
