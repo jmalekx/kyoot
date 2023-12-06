@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/stitchCounter.css" />
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Rajdhani:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">
+          <a href="homepage.html">
+          <img
+            src="images/kyootLogo.png"
+            alt="logo"
+            style="width: 100px; height: auto"
+          /></a>
+        </div>
+
+        <nav class="primary-navigation">
+          <ul class="nav-list fw-bold fs-500">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <div class="main">
+        <h1>Stitch Counter</h1>
+        <h3>Your go-to tool for enhancing precision and ease within your 
+            crochet projects.
+        </h3>
+        <p>
+            You may use this counter as an indispensable companion
+            to ensure precision when following patterns or working on a 
+            crochet project. Through using a counter you can easily
+            keep track of the current stitch, or row, that you are 
+            working on effortlessly, to avoid uneven or miscounted 
+            rows.
+            <hr>
+            For every incremented row, you are greeted by 
+            celebratory confetti, well done kyooter!
+        </p>
+        <h2>Current STITCH:</h2>
+        <div class="counter-container">
+            <h1 id="counter" class="counter">0</h1>
+            <button onclick="increment('counter')">+</button>
+            <button onclick="decrement('counter')">-</button>
+            <button onclick="reset('counter')">Reset</button>
+        </div>
+
+        <h2>Current ROW:</h2>
+        <div class="counter-container">
+            <h1 id="rowCounter" class="counter">0</h1>
+            <button id="confetti" onclick="increment('rowCounter'); triggerConfetti();">+</button>
+            <button onclick="decrement('rowCounter')">-</button>
+            <button onclick="reset('rowCounter')">Reset</button>
+        </div>
+
+        <script type='text/javascript'>
+            let counterValue = 0;
+            let rowCounterValue = 0;
+
+            const counterElement = document.getElementById('counter');
+            const rowCounterElement = document.getElementById('rowCounter');
+
+            function increment(counterType) {
+                if (counterType === 'counter') {
+                    counterValue++;
+                    updateCounter();
+                } else if (counterType === 'rowCounter') {
+                    rowCounterValue++;
+                    updateRowCounter();
+                }
+            }
+
+            function decrement(counterType) {
+                if (counterType === 'counter' && counterValue > 0) {
+                    counterValue--;
+                    updateCounter();
+                } else if (counterType === 'rowCounter' && rowCounterValue > 0) {
+                    rowCounterValue--;
+                    updateRowCounter();
+                }
+            }
+
+            function reset(counterType) {
+                if (counterType === 'counter') {
+                    counterValue = 0;
+                    updateCounter();
+                } else if (counterType === 'rowCounter') {
+                    rowCounterValue = 0;
+                    updateRowCounter();
+                }
+            }
+
+            function updateCounter() {
+                counterElement.textContent = counterValue;
+            }
+
+            function updateRowCounter() {
+                rowCounterElement.textContent = rowCounterValue;
+            }
+
+            document.getElementById('confetti').addEventListener('click', function() {
+                function random(max) {
+                    return Math.random() * (max - 0) + 0;
+                }
+
+                var colorPalette = [
+                    'rgb(249,244,237)', /*lace*/
+                    'rgb(224,219,213)', /*darker lace*/
+                    'rgb(143,145,130)', /*light green*/
+                    'rgb(213,209,196)',
+                    'rgb(188,171,121)', /* olive caramel */
+                    'rgb(188,79,56)'    /* saffron */
+                ];
+
+                var container = document.createDocumentFragment();
+                for (var i = 0; i < 100; i++) {
+  
+                    var randomColor = colorPalette[Math.floor(random(colorPalette.length))];
+
+                    var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);\
+                                  background: ' + randomColor + ';\
+                                  animation: bang 700ms ease-out forwards;\
+                                  opacity: 0';
+
+                    var element = document.createElement("i");
+                    element.style.cssText = styles.toString();
+                    container.appendChild(element);
+                }
+
+                this.appendChild(container);
+            });
+          </script>
+
+      </div>
+    </main>
+  </body>
+  <footer>Kyoot 2023 &copy;</footer>
+</html>
