@@ -118,6 +118,11 @@ main {
 
 }
 
+#intro{
+    background-color: var(--red-00);
+    color: white;
+}
+
 .container-posts{
     text-align: center;
     gap: 10px;
@@ -147,6 +152,9 @@ main {
     padding: 5px;
 }
 
+#maintitle{
+    font-style: italic;
+}
 
 
 
@@ -168,7 +176,7 @@ main {
         width: 100%;
     }
 }
-.post{
+#post{
     display: inline-block;
     padding: 1em;
 
@@ -181,8 +189,8 @@ main {
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   }
   
-.post:before,
-.post:after{
+#post:before,
+#post:after{
     border: inherit;
     border-width: 2px;
     content: '';
@@ -195,7 +203,7 @@ main {
     border-radius: 1em;
 }
 
-.post:hover{
+#post:hover{
     background: var(--footer-00);
     border: 4px dotted var(--footer-00);
 }
