@@ -73,6 +73,85 @@ main {
 
 }
 
+/* my kyoot profile css styling */
+
+.myProjects {
+    padding: 10%;
+}
+
+.myPosts {
+    padding: 10%;
+
+}
+
+.myProfileHeading {
+    text-align: center;
+    color: var(--red-00);
+}
+
+.myPostHeading {
+    text-align: center;
+    color: var(--red-00);
+    margin-top: 5%;
+}
+
+.blog_posts {
+    padding: 20px;
+}
+
+.grid-layout-blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    gap: 10%;
+
+}
+
+.text-decoration{
+    text-decoration: none;
+}
+
+.viewBtn {
+    padding: 5px;
+    background-color: var(--main-neutral-00);
+    border-radius: 50%;
+
+}
+
+.container-posts{
+    text-align: center;
+    gap: 10px;
+
+}
+
+.blog-input{
+    padding: 20px;
+    border-top: 2px solid var(--main-neutral-01);
+    border-bottom: 2px solid var(--main-neutral-01);
+    margin-left: 40%;
+    margin-right: 40%;
+
+}
+
+.tempPostBox{
+    background-color: var(--main-neutral-01);
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.postImage {
+    border-radius: 10%;
+}
+
+.gap {
+    padding: 5px;
+}
+
+
+
+
+/* ----------------- */
+
 #heading{
     text-align: left;
 }
@@ -187,6 +266,7 @@ footer{ /*hurrary*/
 
 .dropbtn {
     /* background-color: var(--neutral-10); */
+    text-decoration: none;
     padding: 16px;
     font-size: 16px;
     border: none;

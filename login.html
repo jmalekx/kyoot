@@ -28,10 +28,10 @@
       <div class="nav-wrapper">
         <div class="logo">
           <a href="homepage.html">
-          <img
-            src="images/kyootLogo.png"
-            alt="logo"
-            style="width: 100px; height: auto"
+            <img
+              src="images/kyootLogo.png"
+              alt="logo"
+              style="width: 100px; height: auto"
           /></a>
         </div>
 
@@ -184,7 +184,8 @@
               </p>
             </div>
 
-            <button type="submit" onclick="submitForm()">Login</button>
+            <!-- <button type="submit" onclick="submitForm()">Login</button> -->
+            <a href="myProfile.php">Login</a>
 
             <!-- block checks if error paramter is set in URL query string 
                          so that when there is an error it will displayed by a p-->
@@ -198,22 +199,23 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function () {
-              // Retrieve the checkbox and the stored value from localStorage
-              var rememberCheckbox = document.querySelector('input[name="remember"]');
-              var storedValue = localStorage.getItem('rememberMe');
-  
-              // Set the checkbox state based on the stored value
-              if (storedValue === 'true') {
-                  rememberCheckbox.checked = true;
-              }
-  
-              // Add an event listener to the checkbox to store its state in localStorage
-              rememberCheckbox.addEventListener("change", function () {
-                  localStorage.setItem('rememberMe', this.checked);
-              });
-          });
-      </script>
+            // Retrieve the checkbox and the stored value from localStorage
+            var rememberCheckbox = document.querySelector(
+              'input[name="remember"]'
+            );
+            var storedValue = localStorage.getItem("rememberMe");
 
+            // Set the checkbox state based on the stored value
+            if (storedValue === "true") {
+              rememberCheckbox.checked = true;
+            }
+
+            // Add an event listener to the checkbox to store its state in localStorage
+            rememberCheckbox.addEventListener("change", function () {
+              localStorage.setItem("rememberMe", this.checked);
+            });
+          });
+        </script>
       </div>
     </main>
   </body>
