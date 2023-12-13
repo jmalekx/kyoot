@@ -180,21 +180,21 @@
                         // displaying the sorted results
                         foreach ($results_array as $q) {
                             ?>
-                        <div class="tempPostBox">
-                            <div>
+                            <div class="tempPostBox">
                                 <div>
-                                    <h1 class="fw-bold">
-                                        <?php echo $q['title']; ?>
-                                    </h1>
+                                    <div>
+                                        <h1 class="fw-bold">
+                                            <?php echo $q['title']; ?>
+                                        </h1>
 
-                                    <!-- limit the content of the blog post to the first 100 characters, so it doesnt take up too much space -->
-                                    <p>
-                                        <?php echo substr($q['content'], 0, 100); ?>
-                                    </p>
+                                        <!-- limit the content of the blog post to the first 100 characters, so it doesnt take up too much space -->
+                                        <p>
+                                            <?php echo substr($q['content'], 0, 100); ?>
+                                        </p>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <?php } ?>
 
                         <div>
@@ -223,44 +223,44 @@
 
 
         <script>
-        /* When the user clicks on the button, 
-                                                                                                                                toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+            /* When the user clicks on the button, 
+                                                                                                                                    toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches(".dropbtn")) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains("show")) {
-                        openDropdown.classList.remove("show");
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+                if (!event.target.matches(".dropbtn")) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains("show")) {
+                            openDropdown.classList.remove("show");
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        // image js
-        const image_input = document.querySelector("#image_input")
-        var uploaded_image = "";
+            // image js
+            const image_input = document.querySelector("#image_input")
+            var uploaded_image = "";
 
-        image_input.addEventListener("change", function() {
-            //console.log(image_input.value);
+            image_input.addEventListener("change", function () {
+                //console.log(image_input.value);
 
-            //to read what file user selected:
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                uploaded_image = reader
-                    .result; //once impage is uploaded we store it in this variable and we are gna read file using reader object
-                document.querySelector("#display_image").style.backgroundImage =
-                    `url(${uploaded_image})`;
+                //to read what file user selected:
+                const reader = new FileReader();
+                reader.addEventListener("load", () => {
+                    uploaded_image = reader
+                        .result; //once impage is uploaded we store it in this variable and we are gna read file using reader object
+                    document.querySelector("#display_image").style.backgroundImage =
+                        `url(${uploaded_image})`;
 
-            });
-            reader.readAsDataURL(this.files[0]);
-        })
+                });
+                reader.readAsDataURL(this.files[0]);
+            })
         </script>
 
     </main>
