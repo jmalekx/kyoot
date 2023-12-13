@@ -12,6 +12,7 @@ include "addPost.php";
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="../css/signup.css" />
 
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,7 +55,7 @@ include "addPost.php";
 
 
 
-                    <div>
+                    <div class="form">
                         <div>
                             <h1 class="myPostHeading fw-bold fs-800">Create Post: </h1>
                         </div>
@@ -64,13 +65,13 @@ include "addPost.php";
                             <form id="add_post_form" method="POST" enctype="multipart/form-data"
                                 onsubmit="return check_blank()">
                                 <fieldset>
-                                    <div>
+                                    <div class="signupform">
                                         <div class="blog-input">
                                             <!-- <input type="text" name="title" id="title" placeholder="Title"/> -->
-                                            <input type="text" name="title" id="title" placeholder="Title"
-                                                value="<?php echo $_GET['title'] ?? ''; ?>" />
+                                            <input type="text" class="signup-form-item" name="title" id="title"
+                                                placeholder="Title" value="<?php echo $_GET['title'] ?? ''; ?>" />
                                         </div>
-                                        <div class="blog-input">
+                                        <div class="blog-input ">
                                             <!-- name attribute used as a reference when the data is submitted- so we can access the data inside the input tags-->
 
 
@@ -78,8 +79,8 @@ include "addPost.php";
                                         If they are present, the values are used to pre-populate the corresponding form inputs using the value attribute for the title 
                                         input and the text between the opening and closing tags for the content textarea. If they are not present, 
                                         the inputs are left blank. -->
-                                            <textarea name="content" id="content"
-                                                placeholder="Enter your text here"><?php echo $_GET['content'] ?? ''; ?></textarea>
+                                            <textarea name="content" id="content" placeholder="Enter your text here"
+                                                class=" signupform signup-form-item"><?php echo $_GET['content'] ?? ''; ?></textarea>
                                         </div>
                                         <!-- <div class="blog-input">
                                             <label for="image_input">+ Add Picture</label>
@@ -92,11 +93,12 @@ include "addPost.php";
                                             </a>
                                         </div> -->
                                         <div class="blog-input">
-                                            <label for="image_input">+ Add Picture</label>
+                                            <!-- <label for="image_input">+ Add Picture</label> -->
                                             <input type="file" name="imagePicture" id="image_input"
-                                                accept="image/png, image/jpg">
+                                                accept="image/png, image/jpg"
+                                                class="custom-file-upload signup-form-item">
                                             <a href="#inside project">
-                                                <div id="display_image">
+                                                <div>
                                                     <?php echo isset($_GET['imagePicture']) ? '<img src="' . $_GET['imagePicture'] . '" alt="Preview">' : ''; ?>
                                                 </div>
                                             </a>

@@ -314,6 +314,12 @@ footer{ /*hurrary*/
     text-decoration: none;
     display: block;
   }
+
+  input[type="file"] {
+    display: none;
+}
+
+
   
   .dropdown a:hover {background-color: #ddd;}
   
