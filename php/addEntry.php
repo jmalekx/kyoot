@@ -28,7 +28,7 @@ include "addPost.php";
         <div class="nav-wrapper">
             <div class="logo">
                 <a href="homepage.html">
-                    <img src="images/kyootLogo.png" alt="logo" style="width: 100px; height: auto" /></a>
+                    <img src="../images/kyootLogo.png" alt="logo" style="width: 100px; height: auto" /></a>
             </div>
 
             <nav class="primary-navigation">
@@ -46,9 +46,7 @@ include "addPost.php";
 
     <main class="">
 
-
-
-        <section class="padding-block-900 ">
+        <section>
 
             <div class="container">
                 <div class="even-columns">
@@ -60,65 +58,70 @@ include "addPost.php";
                             <h1 class="myPostHeading fw-bold fs-800">Create Post: </h1>
                         </div>
 
-                        <div class="container-posts">
+                        <div class="">
 
                             <form id="add_post_form" method="POST" enctype="multipart/form-data"
                                 onsubmit="return check_blank()">
                                 <fieldset>
                                     <div class="signupform">
-                                        <div class="blog-input">
-                                            <!-- <input type="text" name="title" id="title" placeholder="Title"/> -->
-                                            <input type="text" class="signup-form-item" name="title" id="title"
-                                                placeholder="Title" value="<?php echo $_GET['title'] ?? ''; ?>" />
+
+                                        <div class="signup-form-item">
+                                            <input type="text" name="title" id="title" placeholder="Title"
+                                                value="<?php echo $_GET['title'] ?? ''; ?>" />
                                         </div>
-                                        <div class="blog-input ">
-                                            <!-- name attribute used as a reference when the data is submitted- so we can access the data inside the input tags-->
+
+                                        <div class="signup-form-item">
+                                            <textarea type="content" name="content" id="content" cols="30" rows="10"
+                                                placeholder="Enter your text here"
+                                                style="border: none;
+                                                    outline: none;
+                                                    padding: 1em 1.5em;
+                                                    border-radius: 1em;
+                                                    background: rgba(255, 255, 255, 0.6"><?php echo $_GET['content'] ?? ''; ?></textarea>
+                                        </div>
+
+                                        <div class="signup-form-item">
+                                            <p for="image_input" class="fw-bold fs-500">+ Add Picture</p>
+                                            <div
+                                                style="background:rgba(255,255,255,0.6); border-radius: 1em; padding: 1em 0em 1em 0em;">
 
 
-                                            <!-- This code checks if the title and content parameters are present in the query string using the null coalescing operator (??). 
-                                        If they are present, the values are used to pre-populate the corresponding form inputs using the value attribute for the title 
-                                        input and the text between the opening and closing tags for the content textarea. If they are not present, 
-                                        the inputs are left blank. -->
-                                            <textarea name="content" id="content" placeholder="Enter your text here"
-                                                class=" signupform signup-form-item"><?php echo $_GET['content'] ?? ''; ?></textarea>
-                                        </div>
-                                        <!-- <div class="blog-input">
-                                            <label for="image_input">+ Add Picture</label>
-                                            <input type="file" name="" style="visibility:hidden;" id="image_input"
-                                                accept="image/png, image/jpg">
-                                            <a href="#inside project">
-                                                <div id="display_image">
-                                                    <?php echo $_GET['imagePicture'] ?? ''; ?>
-                                                </div>
-                                            </a>
-                                        </div> -->
-                                        <div class="blog-input">
-                                            <!-- <label for="image_input">+ Add Picture</label> -->
-                                            <input type="file" name="imagePicture" id="image_input"
-                                                accept="image/png, image/jpg"
-                                                class="custom-file-upload signup-form-item">
+                                                <input type="file" name="imagePicture" id="image_input"
+                                                    accept="image/png, image/jpg" class="signup-form-item">
+                                            </div>
+
                                             <a href="#inside project">
                                                 <div>
                                                     <?php echo isset($_GET['imagePicture']) ? '<img src="' . $_GET['imagePicture'] . '" alt="Preview">' : ''; ?>
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="blog-input">
+                                        <div class="signup-form-item">
                                             <textarea name="linkURL" id="linkURL" cols="30" rows="10"
-                                                placeholder="Enter a link here"><?php echo $_GET['linkURL'] ?? ''; ?></textarea>
+                                                placeholder="Enter a link here"
+                                                style="border: none;
+                                                    outline: none;
+                                                    padding: 1em 1.5em;
+                                                    border-radius: 1em;
+                                                    background: rgba(255, 255, 255, 0.6"><?php echo $_GET['linkURL'] ?? ''; ?></textarea>
 
                                         </div>
                                     </div>
-                                    <div class="blog-button-flex">
-                                        <div>
-                                            <input type="submit" name="new_post" value="Submit"
-                                                class="blog-button-style fw-bold button" />
-                                            <a href="../myProfile.php">> Go back to my kyoot << /a>
-                                        </div>
-                                        <div>
-                                            <button class="blog-button-style fw-bold button"
+                                    <div class="signupform button">
+                                        <div class=" fw-bold">
+                                            <button><input type="submit" name="new_post" value="Submit"
+                                                    style=" background: 0;" class="fw-bold" /></button>
+                                            <button class=" fw-bold signupform button"
                                                 onclick="clear_button()">Clear</button>
                                         </div>
+                                        <div class="login-form-item">
+                                            <button><a href="../myProfile.php" class="text-decoration">
+                                                    ⬅ Go back to my kyoot ⬅ </a></button>
+                                        </div>
+                                        <!-- <div>
+                                            <button class=" fw-bold signupform button"
+                                                onclick="clear_button()">Clear</button>
+                                        </div> -->
 
                                     </div>
                                 </fieldset>
