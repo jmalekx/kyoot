@@ -53,7 +53,7 @@ include "addPost.php";
 
 
 
-                    <div class="form">
+                    <div class="form ">
                         <div>
                             <h1 class="myPostHeading fw-bold fs-800">Create Post: </h1>
                         </div>

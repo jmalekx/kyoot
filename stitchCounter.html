@@ -79,6 +79,11 @@
             <button onclick="reset('rowCounter')">Reset</button>
         </div>
 
+        <audio id="celebrationAudio" controls>
+          <source src="hooray-36461.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+
         <script type='text/javascript'>
             let counterValue = 0;
             let rowCounterValue = 0;
@@ -151,10 +156,16 @@
                     var element = document.createElement("i");
                     element.style.cssText = styles.toString();
                     container.appendChild(element);
+                    playAudio();
+                    
                 }
 
                 this.appendChild(container);
             });
+            function playAudio() {
+          var audio = document.getElementById('celebrationAudio');
+          audio.play();
+        }
           </script>
 
       </div>

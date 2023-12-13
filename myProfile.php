@@ -22,7 +22,7 @@
                     <img src="images/kyootLogo.png" alt="logo" style="width: 100px; height: auto" /></a>
             </div>
 
-            <nav class="primary-navigation">
+            <nav class="">
                 <ul class="nav-list fw-bold fs-500">
                     <li><a href="myProfile.html">My Kyoot</a></li>
                     <!-- <li><a href="settings.html">Settings</a></li> -->
