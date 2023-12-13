@@ -55,12 +55,18 @@ main {
 
 
 
+
 .grid-col-span-3{
     grid-column: span 3;
 }
 
 .grid-col-span-2{
     grid-column: span 2;
+}
+
+.homepageHeading {
+    grid-column: span 3;
+
 }
 
 .blogPost-grid {
@@ -76,6 +82,13 @@ main {
     text-align: center;
 
 
+}
+
+.welcome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 /* my kyoot profile css styling */
@@ -203,6 +216,7 @@ main {
 
 #maintitle{
     font-style: italic;
+
 }
 
 .backbtn {
@@ -307,9 +321,11 @@ main {
 }
 #border{
     border-top: 1px solid var(--red-00);
+
  
     animation:drawBorder 2.5s ease;
 }
+
 @keyframes drawBorder {
     from {
         width: 0;

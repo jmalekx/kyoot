@@ -131,6 +131,8 @@ form{
     padding: 0em 0em 3em 0em;
     text-align: center;
     justify-content: center;
+    
+    
 }
 
 .signupform input[type=text], .signupform input[type=password], .loginform input[type=text], .loginform input[type=password]{
@@ -147,7 +149,10 @@ form{
     display: flex;
     flex-direction: column;
     margin:1em 8em;
+
+   
 }
+
 
 
 
@@ -200,4 +205,3 @@ form{
     color:white;
     font-weight: 700;
 }
-
