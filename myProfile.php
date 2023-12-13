@@ -53,20 +53,7 @@
                 <div>
                     <h1 class="myProfileHeading fw-bold fs-800">My Projects</h1>
                 </div>
-                <!-- <div>
-                    <a href="php/addEntry.php">Go to blog</a>
-                </div> -->
-                <div>
-                    <h2>GALLERY</h2>
-                </div>
-                <!-- <div>
-          <label for="image_input">+ Add Project</label>
-          <input type="file" name="" style="visibility:hidden;" id="image_input" accept="image/png, image/jpg">
-          <a href="#inside project">
-            <div id="display_image"></div>
-          </a>
 
-        </div> -->
             </div>
         </div>
 
@@ -74,13 +61,17 @@
 
         <section>
             <div class="container">
-                <div class="even-columns myPosts">
-                    <h2 class="fs-secondary-heading fw-bold center "> My posts: </h2>
+                <div class="even-columns">
                     <div class="grid-layout-blogs">
+                        <div class="galleryHeading">
+                            <h2 class="fw-bold fs-600">GALLERY</h2>
+                        </div>
+                        <div class="grid-col-span-3" id="border">
+                        </div>
 
                         <div class="tempPostBox">
                             <img src="images/orangeMug.jpg" alt="orange mug here" class="postImage"
-                                style="width: 200px; height: auto">
+                                style="width: 240px; height: auto">
                             <div class="gap">
                                 <p class="fw-bold fs-500 ">Copper Mug Hug</p>
                             </div>
@@ -91,7 +82,7 @@
                         </div>
                         <div class="tempPostBox">
                             <img src="images/sheepMug.jpg" alt="sheep mug" class="postImage"
-                                style="width: 200px; height: auto">
+                                style="width: 240px; height: auto">
                             <div class="gap">
                                 <p class="fw-bold fs-500 ">mug cosy</p>
                             </div>
@@ -102,7 +93,7 @@
                         </div>
                         <div class="tempPostBox">
                             <img src="images/wineCover.jpg" alt="sheep mug" class="postImage"
-                                style="width: 200px; height: auto">
+                                style="width: 240px; height: auto">
                             <div class="gap">
                                 <p class="fw-bold fs-500 ">Chardonnay Wine Bottle Cozy</p>
                             </div>
@@ -111,10 +102,39 @@
                             </div>
 
                         </div>
-                    </div>
+                        <div class="tempPostBox">
+                            <img src="images/orangeMug.jpg" alt="orange mug here" class="postImage"
+                                style="width: 240px; height: auto">
+                            <div class="gap">
+                                <p class="fw-bold fs-500 ">Copper Mug Hug</p>
+                            </div>
+                            <div class="gap">
+                                <a href="#" class="text-decoration viewBtn">View</a>
+                            </div>
 
-                    <div class="grid-layout-blogs">
+                        </div>
+                        <div class="tempPostBox">
+                            <img src="images/sheepMug.jpg" alt="sheep mug" class="postImage"
+                                style="width: 240px; height: auto">
+                            <div class="gap">
+                                <p class="fw-bold fs-500 ">mug cosy</p>
+                            </div>
+                            <div class="gap"><a href="#" class="text-decoration viewBtn">View</a></div>
 
+
+
+                        </div>
+                        <div class="tempPostBox">
+                            <img src="images/wineCover.jpg" alt="sheep mug" class="postImage"
+                                style="width: 240px; height: auto">
+                            <div class="gap">
+                                <p class="fw-bold fs-500 ">Chardonnay Wine Bottle Cozy</p>
+                            </div>
+                            <div class="gap">
+                                <a href="#" class="text-decoration viewBtn">View</a>
+                            </div>
+
+                        </div>
                         <?php
                         // backend
                         // connects to a MySQL database and selects all the data from the "data" table. 
@@ -160,32 +180,21 @@
                         // displaying the sorted results
                         foreach ($results_array as $q) {
                             ?>
-                        <div>
-                            <div>
-                                <div class="blog_posts tempPostBox">
-                                    <h1 class="fs-primary-heading fw-bold">
-                                        <?php echo $q['title']; ?>
-                                    </h1>
+                            <div class="tempPostBox">
+                                <div>
+                                    <div>
+                                        <h1 class="fw-bold">
+                                            <?php echo $q['title']; ?>
+                                        </h1>
 
-                                    <!-- limit the content of the blog post to the first 100 characters, so it doesnt take up too much space -->
-                                    <p>
-                                        <?php echo substr($q['content'], 0, 100); ?>
-                                    </p>
+                                        <!-- limit the content of the blog post to the first 100 characters, so it doesnt take up too much space -->
+                                        <p>
+                                            <?php echo substr($q['content'], 0, 100); ?>
+                                        </p>
 
-                                    <!-- Debugging: Output the image path -->
-                                    <!-- <p>Image Path:
-                                        <img src="../uploads.kyootLogo.png" alt="BOOM">
-                                        <?php //echo $q['imagePicture']; ?>
-                                    </p> -->
-
-                                    <!-- 
-                    <p>
-                      <?php //echo substr($q['linkURL'], 0, 100); ?>
-                    </p> -->
-
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <?php } ?>
 
                         <div>
@@ -193,61 +202,71 @@
                                     post</a></button>
                         </div>
 
-
-
-
                     </div>
 
+
+
+
+
+
+
                 </div>
+
+            </div>
             </div>
         </section>
 
 
+
+
+
+        <script>
+            /* When the user clicks on the button, 
+                                                                                                                    toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+                if (!event.target.matches(".dropbtn")) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains("show")) {
+                            openDropdown.classList.remove("show");
+                        }
+                    }
+                }
+            };
+
+            // image js
+            const image_input = document.querySelector("#image_input")
+            var uploaded_image = "";
+
+            image_input.addEventListener("change", function () {
+                //console.log(image_input.value);
+
+                //to read what file user selected:
+                const reader = new FileReader();
+                reader.addEventListener("load", () => {
+                    uploaded_image = reader
+                        .result; //once impage is uploaded we store it in this variable and we are gna read file using reader object
+                    document.querySelector("#display_image").style.backgroundImage =
+                        `url(${uploaded_image})`;
+
+                });
+                reader.readAsDataURL(this.files[0]);
+            })
+        </script>
+
     </main>
 
 
-    <script>
-    /* When the user clicks on the button, 
-                                            toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches(".dropbtn")) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains("show")) {
-                    openDropdown.classList.remove("show");
-                }
-            }
-        }
-    };
-
-    // image js
-    const image_input = document.querySelector("#image_input")
-    var uploaded_image = "";
-
-    image_input.addEventListener("change", function() {
-        //console.log(image_input.value);
-
-        //to read what file user selected:
-        const reader = new FileReader();
-        reader.addEventListener("load", () => {
-            uploaded_image = reader
-                .result; //once impage is uploaded we store it in this variable and we are gna read file using reader object
-            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
-
-        });
-        reader.readAsDataURL(this.files[0]);
-    })
-    </script>
+    <footer>Kyoot 2023 &copy;</footer>
 
 </body>
 
-<footer>Kyoot 2023 &copy;</footer>
 
 </html>
