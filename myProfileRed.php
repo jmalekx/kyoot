@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/myProfileRed.css" />
 
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,10 +19,10 @@
         <div class="nav-wrapper">
             <div class="logo">
                 <a href="homepage.html">
-                    <img src="images/kyootLogo.png" alt="logo" style="width: 100px; height: auto" /></a>
+                    <img src="images/kyootLogoRed.png" alt="logo" style="width: 100px; height: auto" /></a>
             </div>
 
-            <nav class="">
+            <nav class="primary-navigation">
                 <ul class="nav-list fw-bold fs-500">
                     <li><a href="myProfile.html">My Kyoot</a></li>
                     <!-- <li><a href="settings.html">Settings</a></li> -->
@@ -40,7 +40,7 @@
         <button onclick="myFunction()" class="dropbtn">Settings</button>
         <div id="myDropdown" class="dropdown-content">
             <p id="dropDownHeading">Appearance</p>
-            <a href="myProfile.html">Default</a>
+            <a href="myProfile.php">Default</a>
             <a href="myProfileRed.php">Red</a>
             </ul>
             </li>
