@@ -200,3 +200,9 @@ i{
 .gap{
     padding: 10px;
 }
+.intro{
+    font-size:var(--fs-600);
+}
+ul{
+    list-style: none;
+}
