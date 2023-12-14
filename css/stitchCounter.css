@@ -46,11 +46,15 @@ html {
 
 body {
     min-height: 100vh;
+
+    
     
 }
 
 main {
     min-height: 100vh;
+
+
 }
 
 
@@ -119,6 +123,7 @@ footer{ /*hurrary*/
 }
 
 .main {
+
     display: inline-block;
     justify-content: center;
     align-items: center;
@@ -131,6 +136,7 @@ footer{ /*hurrary*/
     text-align: center;
     justify-content: center;
     height: fit-content;
+  
 }
 
 p{
