@@ -37,7 +37,8 @@
     <!-- change css settings -->
 
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Settings</button>
+        <button onclick="myFunction()" class="dropbtn"><img src="images/icons8-settings-50.png"
+                style="width:20px; height:20px;" alt="lol"> Settings</button>
         <div id="myDropdown" class="dropdown-content">
             <p id="dropDownHeading">Appearance</p>
             <a href="myProfile.html">Default</a>
@@ -224,7 +225,7 @@
 
         <script>
             /* When the user clicks on the button, 
-                                                                                                                                        toggle between hiding and showing the dropdown content */
+                                                                                                                                                            toggle between hiding and showing the dropdown content */
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
             }

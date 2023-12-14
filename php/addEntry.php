@@ -20,6 +20,9 @@ include "addPost.php";
     <link
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Rajdhani:wght@300;500;700&display=swap"
         rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </head>
 
 
@@ -132,83 +135,84 @@ include "addPost.php";
 
 
                             <script>
-                                function clear_button() {
-                                    document.getElementById("title").value = "";
-                                    document.getElementById("content").value = "";
+                            function clear_button() {
+                                document.getElementById("title").value = "";
+                                document.getElementById("content").value = "";
+                            }
+
+
+
+
+
+                            // in the event that the blog has not been filled out fully
+                            function check_blank() {
+                                if (document.getElementById('title').value == "") {
+                                    document.getElementById('title').style.borderColor = "red";
+                                    // pause form from submitting
+                                    return false;
+                                }
+                                if (document.getElementById('content').value == "") {
+                                    document.getElementById('content').style.borderColor = "red";
+                                    return false;
+                                }
+                                if (document.getElementById('title').value == "" && document.getElementById('content')
+                                    .value == "") {
+                                    document.getElementById('title').style.borderColor = "red";
+                                    document.getElementById('content').style.borderColor = "red";
+                                    return false;
                                 }
 
+                            }
 
+                            function displayImagePreview(input) {
+                                var previewArea = document.getElementById('display_image');
 
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
 
+                                    reader.onload = function(e) {
+                                        // Create an image element and set the source to the selected file
+                                        var imgElement = document.createElement('img');
+                                        imgElement.src = e.target.result;
+                                        imgElement.alt = 'Preview';
 
-                                // in the event that the blog has not been filled out fully
-                                function check_blank() {
-                                    if (document.getElementById('title').value == "") {
-                                        document.getElementById('title').style.borderColor = "red";
-                                        // pause form from submitting
-                                        return false;
-                                    }
-                                    if (document.getElementById('content').value == "") {
-                                        document.getElementById('content').style.borderColor = "red";
-                                        return false;
-                                    }
-                                    if (document.getElementById('title').value == "" && document.getElementById('content')
-                                        .value == "") {
-                                        document.getElementById('title').style.borderColor = "red";
-                                        document.getElementById('content').style.borderColor = "red";
-                                        return false;
-                                    }
+                                        // Remove any existing content in the preview area
+                                        while (previewArea.firstChild) {
+                                            previewArea.removeChild(previewArea.firstChild);
+                                        }
+
+                                        // Append the new image element to the preview area
+                                        previewArea.appendChild(imgElement);
+                                    };
+
+                                    reader.readAsDataURL(input.files[0]);
                                 }
-
-                                function displayImagePreview(input) {
-                                    var previewArea = document.getElementById('display_image');
-
-                                    if (input.files && input.files[0]) {
-                                        var reader = new FileReader();
-
-                                        reader.onload = function (e) {
-                                            // Create an image element and set the source to the selected file
-                                            var imgElement = document.createElement('img');
-                                            imgElement.src = e.target.result;
-                                            imgElement.alt = 'Preview';
-
-                                            // Remove any existing content in the preview area
-                                            while (previewArea.firstChild) {
-                                                previewArea.removeChild(previewArea.firstChild);
-                                            }
-
-                                            // Append the new image element to the preview area
-                                            previewArea.appendChild(imgElement);
-                                        };
-
-                                        reader.readAsDataURL(input.files[0]);
-                                    }
-                                }
+                            }
 
 
 
-                                // function preview_post() {
+                            // function preview_post() {
 
-                                //     // Get the title and content values from the form
-                                //     var title = document.getElementById("title").value;
-                                //     var content = document.getElementById("content").value;
+                            //     // Get the title and content values from the form
+                            //     var title = document.getElementById("title").value;
+                            //     var content = document.getElementById("content").value;
 
-                                //     if (title.trim() !== "" && content.trim() !== "") {
+                            //     if (title.trim() !== "" && content.trim() !== "") {
 
 
-                                //         // URL encode the content and title for use in the query string
-                                //         var encodedTitle = encodeURIComponent(title);
-                                //         var encodedContent = encodeURIComponent(content);
+                            //         // URL encode the content and title for use in the query string
+                            //         var encodedTitle = encodeURIComponent(title);
+                            //         var encodedContent = encodeURIComponent(content);
 
-                                //         // Redirect the user to preview.php - content and title as query parameters
-                                //         window.location.href = "preview.php?title=" + encodedTitle + "&content=" +
-                                //             encodedContent;
+                            //         // Redirect the user to preview.php - content and title as query parameters
+                            //         window.location.href = "preview.php?title=" + encodedTitle + "&content=" +
+                            //             encodedContent;
 
-                                //     } else {
-                                //         document.getElementById('title').style.borderColor = "red";
-                                //         document.getElementById('content').style.borderColor = "red";
-                                //     }
-                                // }
+                            //     } else {
+                            //         document.getElementById('title').style.borderColor = "red";
+                            //         document.getElementById('content').style.borderColor = "red";
+                            //     }
+                            // }
                             </script>
 
 
