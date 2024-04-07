@@ -14,9 +14,9 @@ This is a university group project for Interactive Media Design and Production M
 
 ## Project Information
 
-[Report](https://github.com/jmalekx/kyoot/blob/main/visuals/report.pdf)
+The Project Report can be viewed [HERE](https://github.com/jmalekx/kyoot/blob/main/visuals/report.pdf)
 
-Some aspects aren't fully functional and are for previous pruposes. Further development includes:
+Some aspects aren't fully functional and are for prototype preview purposes. Further development includes:
 - Implementation of this functionality
 - Adding more animations for greater personal experience
 - Adding personalization; user can pick layout of posts
